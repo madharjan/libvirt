@@ -1,49 +1,51 @@
 
-## LibVirt Virtualization
+# LibVirt Virtualization
 
 Poor's Man Virtualization
-  - Support Cloud Image (Ubuntu, CentOS)
-  - Networking (Bridge, NAT, Isolated)
-  - Web Based Administration using WebVirtMgr http://github.com/retspen/webvirtmgr
-  - NoVNC Remote Connection
 
-### Server Setup
+- Support Cloud Image (Ubuntu, CentOS)
+- Networking (Bridge, NAT, Isolated)
+- Web Based Administration using WebVirtMgr [http://github.com/retspen/webvirtmgr](http://github.com/retspen/webvirtmgr)
+- NoVNC Remote Connection
+
+## Server Setup
 
 | Hostname     | IP            |
 |--------------|---------------|
 | ubuntu       | 192.168.0.2   |
 
-### Host File ###
+## Host File
 
-**Add Following to Host File (/etc/hosts)**
+Add Following to Host File (/etc/hosts)
 
-```
+```txt
 192.168.0.2 ubuntu
 192.168.0.2 virtmgr.local  # Virtualization console
-
 ```
-### Virtualization Console
 
-| URL                        | Username | Password  |
-|----------------------------|----------|-----------|
-| http://virtmgr.local       | admin    |[password] |
+## Virtualization Console
 
-**Virtualization Setup [Details](virtualization-setup.md)**
+| URL                                              | Username | Password  |
+|--------------------------------------------------|----------|-----------|
+| [http://virtmgr.local](http://virtmgr.local)     | admin    |[password] |
 
-### SMTP Configuration
+Virtualization Setup [Details](virtualization-setup.md)
+
+## SMTP Configuration
+
 | Server        | Port   |
 |---------------|--------|
 | smtp-server   | 25     |
 
-**SMTP Setup [Details](smtp-setup.md)**
+SMTP Setup [Details](smtp-setup.md)
 
 Note: `smtp-server` will resolve to IP of Virtualization Host
 
-### Guest VMs Network
+## Guest VMs Network
 
-**Isolated Network** : 192.168.1.0/24
+Isolated Network : 192.168.1.0/24
 
-### Guest VMs
+## Guest VMs
 
 Upload Cloud Image
 
@@ -55,6 +57,7 @@ Upload Cloud Image
 To create new VM, clone VM with **new** MAC address
 
 Note: For CentOS
-* Update 'eth0' MAC on udev /etc/udev/ruled.s/70-persistent-net.rules
-* Update 'eth0' MAC on /etc/sysconfig/network-scripts/ifcfg-eth0
-* Reboot
+
+- Update 'eth0' MAC on udev /etc/udev/ruled.s/70-persistent-net.rules
+- Update 'eth0' MAC on /etc/sysconfig/network-scripts/ifcfg-eth0
+- Reboot
